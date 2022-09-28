@@ -216,14 +216,62 @@ namespace MySTL {
 
 	//insert
 	template<class T>
-	typename list<T>::iterator list<T>::insert(iterator postion,const value_type& value) {
-		return insert(postion, 1, value);
+	typename list<T>::iterator list<T>::insert(iterator position,const value_type& value) {
+		link_type link = create_node(value);
+		iterator _befor_position=position.node->prev;
+		_befor_position.node->next = link;
+		link->prev = _befor_position.node;
+		position.node->prev = link;
+		link->next = position.node;
+		return link;
 	}
 
 	template<class T>
-	typename list<T>::iterator list<T>::insert(iterator postion, size_t n, const value_type& value) {
-		if (0 == n) return postion;
-		iterator first = postion.node->prev;
+	typename list<T>::iterator list<T>::insert(iterator position, size_t n, const value_type& value) {
+		if (0 == n) return position;
+		while (n--) {
+			position = insert(position, value);
+		}
+		return position;
 	}
+
+	template<class T>
+	template<class InputIterator>
+	typename list<T>::iterator list<T>::insert(iterator position, InputIterator first, InputIterator last) {
+		if (first == last) return position;
+		for (last--; last != first; last--) {
+			position = insert(position, *last);
+		}
+		return position;
+	}
+
+	template<class T>
+	typename list<T>::iterator list<T>::erase(iterator position) {
+		iterator result = position.node->next;
+		position.node->prev->next = result;
+		result.node->prev = position.node->prev->next;
+		destroy_node(position);
+		return result;
+	}
+
+	template<class T>
+	typename list<T>::iterator list<T>::erase(iterator first, iterator last) {
+		if (first == last) return first;
+		first.node->prev->next = last;
+		last.node->prev = first.node->prev;
+		for (; first != last;) {
+			iterator temp = first;
+			first++;
+			destroy_node(temp);
+		}
+		return last;
+	}
+
+	template<class T>
+	void list<T>::clear() {
+		erase(begin(), end());
+	}
+
+
 
 }//end of namespace

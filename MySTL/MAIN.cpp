@@ -12,7 +12,11 @@ after_and_befor aab;
 
 #include <list>
 signed main() {
-	
-	
+	std::list<int> l(5, 1);
+	std::list<int>::iterator iter = l.begin();
+	for (; iter != l.end();) {
+		iter = l.erase(iter);
+	}
+	std::cout << l.size() << std::endl;
 	
 }

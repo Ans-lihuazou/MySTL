@@ -191,7 +191,7 @@ namespace MySTL{
 		template<class Compare>//判断是否相等的函数
 		void unique(Compare);
 
-		void reverse();
+		void reverse();//反转
 
 	private:
 		//功能函数
