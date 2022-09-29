@@ -5,6 +5,13 @@
 
 namespace MySTL {
 
+	template<class T>
+	class deque {
+
+
+
+	};
+
 }
 
 #endif // !_DEQUE_H_
