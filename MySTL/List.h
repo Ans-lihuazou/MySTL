@@ -6,8 +6,10 @@
 #include "Allocator.h"
 #include "ReverseIterator.h"
 #include "Algorithm.h"
+#include "Utlity.h"
 #include <cstddef>
 #include <cassert>
+#include <type_traits>
 
 namespace MySTL{
 
@@ -21,15 +23,14 @@ namespace MySTL{
 
 			list_node* next;
 			list_node* prev;
-			list<T>* belong;
 			T data;
 
 			ListNode
-			(T d, list_node* n = nullptr, list_node* p = nullptr, list<T>* b = nullptr) :
-				data(d), next(n), prev(p), belong(b) {};
+			(T d, list_node* n = nullptr, list_node* p = nullptr) :
+				data(d), next(n), prev(p) {};
 
 			bool operator==(const list_node& ln) {
-				return(data == ln.data && next == ln.next && prev == ln.prev, belong == ln.belong);
+				return(data == ln.data && next == ln.next && prev == ln.prev);
 			}
 
 		};//end of ListNode
@@ -38,20 +39,18 @@ namespace MySTL{
 		class iterator_list : public Iterator<bidirectional_iterator_tag, T> {
 		public:
 			typedef iterator_list<T>	iterator_type;
-
 			typedef size_t				size_type;
-
-			typedef  typename ListNode<T>		list_node;
-			typedef  typename list_node*		link_type;
+			typedef  ListNode<T>		list_node;
+			typedef  ListNode<T>*		link_type;
 
 
 
 			//构造
-			iterator_list() {}
+			iterator_list() {};
 			iterator_list(link_type n) :node(n) {};
 			iterator_list(const iterator_list& iter) :node(iter.node) {};
 
-			iterator_type operator++() {
+			iterator_type& operator++() {
 				node = node->next;
 				return *this;
 			}
@@ -62,8 +61,8 @@ namespace MySTL{
 				return temp;
 			}
 
-			iterator_type operator--() {
-				node = node->pre;
+			iterator_type& operator--() {
+				node = node->prev;
 				return *this;
 			}
 
@@ -73,23 +72,44 @@ namespace MySTL{
 				return temp;
 			}
 
-			list_node operator*() {
+			T& operator*() {
 				return node->data;
 			}
 
-			list_node operator->() {
+			T* operator->() {
 				return &(this->operator*());
 			}
-		private:
+
+			bool operator==( const iterator_type& rhs) {
+				return node == rhs.node;
+			}
+
+			bool operator!=(const iterator_type& rhs) {
+				return !(this->operator==(rhs));
+			}
+			//template<class T>
+			//friend bool operator ==(const iterator_list<T>& lhs, const iterator_list<T>& rhs);
+			//template<class T>
+			//friend bool operator !=(const iterator_list<T>& lhs, const iterator_list<T>& rhs);
 			//迭代器指向的数据
 			link_type node;
 		};//end of iterator_list
+
+		template<class T>
+		bool operator ==(const iterator_list<T>& lhs, const iterator_list<T>& rhs) {
+			return lhs.node == rhs.node;
+		};
+		template<class T>
+		bool operator !=(const const iterator_list<T>& lhs, const iterator_list<T>& rhs) {
+			return !(lhs.node == rhs.node);
+		};
+
 	}//end of MyList
 
 	template<class T>
 	class list {
 	private:
-		typedef allocator<node> dataAllocator;
+		typedef allocator< MyList::ListNode<T> > dataAllocator;
 	public:
 		//typedef  typename ListNode<T>		list_node;
 		//typedef  typename list_node*		link_type;
@@ -102,8 +122,8 @@ namespace MySTL{
 		typedef size_t			size_type;
 		typedef ptrdiff_t		difference_type;
 
-		typedef MyList::ListNode<T>				node;
-		typedef node*							link_type;
+		typedef MyList::ListNode<T>				link_node;
+		typedef MyList::ListNode<T>*			link_type;
 		typedef MyList::iterator_list<T>		iterator;
 		typedef MyList::iterator_list<const T>	const_iterator;
 
@@ -126,19 +146,19 @@ namespace MySTL{
 		/*****************迭代器*****************/
 		iterator begin();
 		const_iterator begin()const;
-		const_iterator cbegin()const;
+		//const_iterator cbegin()const;
 
 		iterator end();
 		const_iterator end()const;
-		const_iterator cend()const;
+		//const_iterator cend()const;
 
 		reverse_iter rbegin();
-		const_reverse_iter rbegin()const;
-		const_reverse_iter crbegin()const;
+		//const_reverse_iter rbegin()const;
+		//const_reverse_iter crbegin()const;
 
 		reverse_iter rend();
-		const_reverse_iter rend()const;
-		const_reverse_iter crend()const;
+		//const_reverse_iter rend()const;
+		//const_reverse_iter crend()const;
 
 		/*****************容量*****************/
 		bool empty();
@@ -157,7 +177,7 @@ namespace MySTL{
 
 		// 
 		iterator insert(iterator, const value_type&);
-		iterator insert(iterator, size_t, const value_type&);
+		iterator insert(iterator, size_type, const value_type&);
 		template<class InputIterator>
 		iterator insert(iterator, InputIterator, InputIterator);
 
@@ -166,7 +186,8 @@ namespace MySTL{
 
 		void swap(list&);
 
-		void resize(size_t);
+		void resize(size_type);
+		void resize(size_type,const value_type&);
 
 		void clear();
 
@@ -181,7 +202,7 @@ namespace MySTL{
 
 		void merge(list&);//合并有序序列
 		template<class Compare>//比较大小的函数
-		template void marge(list&, Compare);
+		void merge(list&, Compare);
 
 		void remove(const value_type&);
 		template<class isMove>//判断是否删除
@@ -193,9 +214,24 @@ namespace MySTL{
 
 		void reverse();//反转
 
+		template<class T>
+		friend void swap(list<T>&, list<T>&);
+		template <class T>
+		friend bool operator== (const list<T>& lhs, const list<T>& rhs);
+		template <class T>
+		friend bool operator!= (const list<T>& lhs, const list<T>& rhs);
+
 	private:
 		//功能函数
-		
+		void _list_aux(size_type, const value_type&,std::true_type);
+
+		template<class InputIterator>
+		void _list_aux(InputIterator, InputIterator, std::false_type);
+
+		iterator _insert_aux(iterator,size_type, const value_type&, std::true_type);
+
+		template<class InputIterator>
+		iterator _insert_aux(iterator,InputIterator, InputIterator, std::false_type);
 
 		link_type get_node();//申请一个节点空间
 		
@@ -205,9 +241,12 @@ namespace MySTL{
 		void destroy_node(link_type p);//析构并释放节点
 
 		void transfer(iterator position,iterator first,iterator last);//将[first,last)移动到position 之前
+
+		const_iterator changeIteratorToConstIterator(iterator&)const;
 		
 		//
-		link_type node;
+		iterator tail;
+		iterator head;
 
 
 	};//end of list

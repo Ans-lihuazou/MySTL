@@ -72,6 +72,9 @@
     <ClInclude Include="List.impl.h">
       <Filter>头文件\List</Filter>
     </ClInclude>
+    <ClInclude Include="ListTest.h">
+      <Filter>头文件\Test</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VectorTest.cpp">

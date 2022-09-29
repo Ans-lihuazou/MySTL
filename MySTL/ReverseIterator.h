@@ -18,13 +18,13 @@ namespace MySTL {
 		typedef typename const reference								const_reference;
 
 		reverse_iterator() : _base(0), _cur(0) {}
-		reverse_iterator(const Iterator& base) :_base(base) {
+		explicit reverse_iterator(const Iterator& base) :_base(base) {
 			Iterator t = base;
 			_cur = --t;
 		}
 		template<class T>
 		reverse_iterator(const reverse_iterator<T>& iter) {
-			base = (Iterator)iter;
+			_base = (Iterator)iter.base();
 			Iterator t = base;
 			_cur = --t;
 		}
@@ -68,6 +68,14 @@ namespace MySTL {
 			return result;
 		};
 
+		bool operator == (const reverse_iterator<Iterator>& lhs) {
+			return lhs._cur == _cur;
+		}
+
+		bool operator != (const reverse_iterator<Iterator>& lhs) {
+			return lhs._cur != _cur;
+		}
+		
 
 		template <class Iterator>
 		friend bool operator == (const reverse_iterator<Iterator>& lhs,
@@ -109,7 +117,7 @@ namespace MySTL {
 		Iterator advanceNStep(Iterator iter, difference_type n, bool flag, bidirectional_iterator_tag) {//一步一步
 			n = (n < 0) ? -n : n;
 			if (flag) while (n--) iter++;
-			else while (n--) iter++;
+			else while (n--) iter--;
 			return iter;
 		}
 	};

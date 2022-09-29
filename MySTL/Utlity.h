@@ -7,6 +7,14 @@
 #include <string.h>
 
 namespace MySTL {
+	//swap
+	template<class T>
+	void swap(T& a, T& b) {
+		T temp = a;
+		a = b;
+		b = temp;
+	}
+
 	//uninitialized_fill_n
 	template<class ForwardIterator, class Size, class T>
 	ForwardIterator _uninitialized_fill_n_aux

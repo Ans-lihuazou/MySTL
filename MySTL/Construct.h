@@ -7,9 +7,9 @@
 
 namespace MySTL {
 	namespace _Construct_ {
-		template<class T1, class T2>
-		inline void construct(T1* p, const T2& v) {
-			new(p)T1(v);
+		template<class T>
+		inline void construct(T* p, const T& v) {
+			new(p)T(v);
 		}
 
 		template<class T>

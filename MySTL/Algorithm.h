@@ -11,7 +11,7 @@ namespace MySTL {
 	template<class InputIterator>
 	inline  typename InputIterator::difference_type
 		_distance(InputIterator first, InputIterator last, input_iterator_tag) {
-		typename IteratorTraits::difference_type n = 0;
+		typename InputIterator::difference_type n = 0;
 		while (first != last) n++, first++;
 		return n;
 	}
@@ -135,5 +135,23 @@ namespace MySTL {
 		memcpy(result, first, sizeof(*first) * dist);
 		return result + dist;
 	}
+
+	//less
+	template<class T>
+	struct less {
+
+		bool operator()(const T& x, const T& y) {
+			return x < y;
+		}
+	};
+
+	//greater
+	template<class T>
+	struct greater {
+
+		bool operator()(const T& x, const T& y) {
+			return x > y;
+		}
+	};
 
 }

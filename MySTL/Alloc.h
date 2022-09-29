@@ -136,7 +136,7 @@ namespace MySTL {
 		else {//(向第一级配置器,malloc)申请空间
 			//if (total_diff < 8) free(start_free);
 			if (total_diff >0) {//整合剩余空间
-				std::cout << total_diff << std::endl;
+				//std::cout << total_diff << std::endl;
 				obj* volatile* use_free_list = free_list + FREELIST_INDEX(total_diff);
 				((obj*)start_free)->free_list_link = *use_free_list;
 				(*use_free_list) = (obj*)start_free;
