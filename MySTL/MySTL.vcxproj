@@ -136,6 +136,8 @@
     <ClInclude Include="Allocator.h" />
     <ClInclude Include="Allocator.impl.h" />
     <ClInclude Include="Construct.h" />
+    <ClInclude Include="Deque.h" />
+    <ClInclude Include="Deque.impl.h" />
     <ClInclude Include="Iterator.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="List.impl.h" />

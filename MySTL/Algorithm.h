@@ -6,6 +6,13 @@
 
 namespace MySTL {
 	
+	//deque_buffer_size
+	size_t __deque_buffer_size(size_t n, size_t type_size) {
+		if (n != 0) return n;
+		if (type_size > 512) return 512 / type_size;
+		return 1;
+	}
+
 	//distance 计算迭代器的距离
 	//一步一步计算:InputIterator,OutputIterator,ForwardIterator,BidirectionalIterator
 	template<class InputIterator>
