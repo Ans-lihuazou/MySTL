@@ -13,6 +13,10 @@ after_and_befor aab;
 //#include "VectorTest.h"	//test is ok
 //#include "ListTest.h"	//test is ok
 
+void fun(const int& x) {
+	std::cout << x << std::endl;
+}
+
 signed main() {
-	//MySTL::ListTest::testAllCases();
+	
 }

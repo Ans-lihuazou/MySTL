@@ -158,6 +158,14 @@ namespace MySTL {
 	}
 
 	template<class T>
+	typename list<T>::const_iterator list<T>::cbegin()const {
+		/*MyList::ListNode<const T> temp(head.node->data, (MyList::ListNode<const T>*)(head.node->next), (MyList::ListNode<const T>)(head.node->prev));
+		return const_iterator(&temp);*/
+		auto temp = (list* const)this;
+		return changeIteratorToConstIterator(temp->head);
+	}
+
+	template<class T>
 	typename list<T>::const_iterator list<T>::changeIteratorToConstIterator(iterator& it)const {
 		using nodeP = MyList::ListNode<const T>*;
 		//auto temp = (list<const T>*const)this;
@@ -184,10 +192,14 @@ namespace MySTL {
 		return changeIteratorToConstIterator(temp->tail);
 	}
 
-	/*template<class T>
+	template<class T>
 	typename list<T>::const_iterator list<T>::cend()const {
-		return end();
-	}*/
+		/*	MyList::ListNode<const T> temp(tail.node->data, (MyList::ListNode<const T>*)(tail.node->next), (MyList::ListNode<const T>)(tail.node->prev));
+			return const_iterator(&temp);*/
+		auto temp = (list* const)this;
+		return changeIteratorToConstIterator(temp->tail);
+	}
+
 
 	template<class T>
 	typename list<T>::reverse_iter list<T>::rbegin() {

@@ -25,6 +25,9 @@
     <Filter Include="头文件\Allocator">
       <UniqueIdentifier>{944aab1c-268b-407d-98ff-4b620c9e5c24}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Dqque">
+      <UniqueIdentifier>{16cdcc4f-8479-4d0a-ac39-ac1f4177d8f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithm.h">
@@ -74,6 +77,12 @@
     </ClInclude>
     <ClInclude Include="ListTest.h">
       <Filter>头文件\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="Deque.h">
+      <Filter>头文件\Dqque</Filter>
+    </ClInclude>
+    <ClInclude Include="Deque.impl.h">
+      <Filter>头文件\Dqque</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

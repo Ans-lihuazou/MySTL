@@ -132,7 +132,7 @@ namespace MySTL{
 
 		/*****************构造，析构，赋值*****************/
 		list();
-		list(size_type, const value_type& /*node->data*/);
+		explicit list(size_type, const value_type& /*node->data*/);
 		template<class InputIterator>
 		list(InputIterator, InputIterator);
 		list(const list&);
@@ -146,11 +146,11 @@ namespace MySTL{
 		/*****************迭代器*****************/
 		iterator begin();
 		const_iterator begin()const;
-		//const_iterator cbegin()const;
+		const_iterator cbegin()const;
 
 		iterator end();
 		const_iterator end()const;
-		//const_iterator cend()const;
+		const_iterator cend()const;
 
 		reverse_iter rbegin();
 		//const_reverse_iter rbegin()const;
