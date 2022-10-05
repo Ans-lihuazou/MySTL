@@ -212,6 +212,13 @@ namespace MySTL {
 
 	};
 
+	template<class T>
+	class deque {
+
+
+
+	};
+
 }
 
 #include "Deque.impl.h"

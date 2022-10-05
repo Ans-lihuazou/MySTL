@@ -30,7 +30,7 @@ namespace MySTL {
 
 		//ctor,copy ctor,dtor,assignment
 		vector();
-		vector(size_type);
+		explicit vector(size_type);
 		vector(size_type, const value_type&);
 		template<class InputIterator>
 		vector(InputIterator, InputIterator);
