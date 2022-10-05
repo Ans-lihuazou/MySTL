@@ -94,9 +94,11 @@ namespace MySTL {
 			template<class T,class Alloc>
 			friend class MySTL::deque;
 			typedef const MySTL::deque<T>* containerPtr;
+
 			size_type _map_index;//所属的连续块状空间编号
 			pointer _cur;//指向的数据
 			containerPtr _container;//所属的deque
+
 
 			pointer _get_head(size_type n) {
 				return _container->map[n];
@@ -196,6 +198,7 @@ namespace MySTL {
 		
 		enum {BUFFERSIZE=64};//一个空间快可以容纳的数据个数
 
+
 		iterator _start;
 		iterator _finsh;
 
@@ -203,22 +206,17 @@ namespace MySTL {
 		size_type map_size;
 
 		//构造
+
 		void _deque_aux(size_type, const value_type&, std::true_type);
 		template<class InputIterator>
 		void _deque_aux(InputIterator first, InputIterator last, std::false_type);
 		
 		//获取空间
 		void _init();//初始化
-		void _reallocate_and_copy(size_type);
 
 	};
 
-	template<class T>
-	class deque {
 
-
-
-	};
 
 }
 
