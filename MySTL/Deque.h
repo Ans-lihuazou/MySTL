@@ -41,9 +41,9 @@ namespace MySTL {
 			const pointer operator->()const { return &(this->operator*()); }
 
 
-			static size_type buffer_size() {
-				return __deque_buffer_size(BufSize, sizeof(T));
-			}
+			//static size_type buffer_size() {
+			//	return __deque_buffer_size(BufSize, sizeof(T));
+			//}
 
 			iterator operator++() {
 				if (_cur != _get_tail(_map_index)) {
@@ -126,8 +126,8 @@ namespace MySTL {
 		typedef size_t		size_type;
 		typedef ptrdiff_t	difference_type;
 
-		typedef MyDeque::iterator_deque<T, BufSize>			iterator;
-		typedef MyDeque::iterator_deque<const T, BufSize>	const_iterator;
+		typedef MyDeque::iterator_deque<T>			iterator;
+		typedef MyDeque::iterator_deque<const T>	const_iterator;
 		typedef reverse_iterator<iterator> reverse;
 		typedef reverse_iterator<const_iterator> const_reverse;
 
@@ -213,7 +213,12 @@ namespace MySTL {
 		
 		//获取空间
 		void _init();//初始化
+		map_pointer _allocate_map(size_type);
+		pointer _allocate_block();
+		map_pointer _reallocate_and_copy(size_type n);
 
+		size_type _get_buffer_size();
+		size_type _get_new_size(size_type);
 	};
 
 

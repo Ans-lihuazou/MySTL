@@ -54,24 +54,62 @@ namespace MySTL {
 		
 	}//end of namepspace mydeque
 
-	////功能函数
-	//template<class T, class Alloc, size_t BufSize>
-	//typename deque<T, Alloc, BufSize>::map_pointer _get_new_map(size_type n) {
-	//	size_type _num_nodes = n / MyDeque::iterator_deque::buffer_size() + 1;
-	//	map_size = std::max(8, _num_nodes + 2);
-	//	map = mapAllocator::allocate(map_size);
-	//	map_pointer _new_start = map + (map_size - _num_nodes) / 2;
-	//	map_pointer _new_finsh = _new_start + _num_nodes - 1;
-	//	map_pointer cur = _new_start;
-	//	for (; cur <= _new_finsh; cur++) {
-	//		*cur = dataAllocator::allocate(BufSize);
-	//	}
-	//	_statr = new_start;
-	//	_finsh = new_finsh;
-	//	_start.cur = start.first;
-	//	_finsh.cur = _finsh.last;
-	//}
+	//deque
+	//功能函数
+	template<class	T,class Alloc>
+	void deque<T, Alloc>::_init() {
+		map_size = 2;
+		map = mapAllocator::allocate(map_size);
+		_start._container = _finsh._container = this;
+		_start._map_index = _finsh._map_index = 1;
+		_start._cur = _finsh._cur = map[1];
+	}
 
+	template<class	T, class Alloc>
+	typename deque<T, Alloc>::size_type
+		deque<T, Alloc>::_get_buffer_size() { return BUFFERSIZE; }
+
+	template<class	T, class Alloc>
+	typename deque<T, Alloc>::pointer
+		deque<T, Alloc>::_allocate_block() {
+		return dataAllocator::allocate(BUFFERSIZE);
+	}
+
+	template<class	T, class Alloc>
+	typename deque<T, Alloc>::map_pointer 
+	deque<T, Alloc>::_allocate_map(size_type n) {
+		map_pointer temp = mapAllocator::allocate(n);
+		for (int i = 0; i < n; i++)
+			temp[i] = _allocate_block();
+		return temp;
+	}
+
+	template<class	T, class Alloc>
+	typename deque<T, Alloc>::map_pointer
+		deque<T, Alloc>::_reallocate_and_copy(size_type n) {
+		size_type _new_mapsize = n;
+		map_pointer temp = _allocate_map(_new_mapsize);
+		size_type _start_index = _new_mapsize / 4;//当前容量为4倍
+		for (int i = _start._map_index; i < map_size && i <= _finsh._map_index; i++) {
+			for (int j = 0; j < BUFFERSIZE; j++) {
+				temp[_start_index][j] = map[i][j];
+			}
+			_start_index++;
+		}
+		_start_index = _new_mapsize / 4;
+		size_type _first_to_cur = _start._cur - map[_start._map_index];
+		size_type _last_size = this->size();
+		clear();
+		map_size = _new_mapsize;
+		_start = iterator(_start_index / 4, temp[_start_index] + _first_to_cur, this);
+		_finsh = _start + _last_size;
+	}
+
+	template<class	T, class Alloc>
+	typename deque<T, Alloc>::size_type
+		deque<T, Alloc>::_get_new_size(size_type n) {
+		return ((n == 0) ? 2 : n * 2);
+	}
 
 	template<class T,class Alloc>
 	deque<T, Alloc>::deque():map(0),map_size(0) {};
@@ -89,10 +127,34 @@ namespace MySTL {
 
 	template<class T, class Alloc>
 	deque<T, Alloc>::deque(const deque& q) {
-		
+		map_size = q.map_size;
+		map = _allocate_map(map_size);
+		_start._map_index = q._start._map_index;
+		_finsh._map_index = q._finsh._map_index;
+		_start._cur = map[_start._map_index] + (q._start._cur - q.map[q._start._map_index]);
+		_finsh._cur = map[_finsh._map_index] + (q._finsh._cur - q.map[q._finsh._map_index]);
+		for (iterator i = _start,j = q._start; i < _finsh; i++) {
+			*(i._cur) = *(j._cur);
+		}
 	}
 	
+	template<class T, class Alloc>
+	deque<T, Alloc>::deque(deque&& q) {
+		map_size = q.map_size;
+		map = _allocate_map(map_size);
+		_start._map_index = q._start._map_index;
+		_finsh._map_index = q._finsh._map_index;
+		_start._cur = map[_start._map_index] + (q._start._cur - q.map[q._start._map_index]);
+		_finsh._cur = map[_finsh._map_index] + (q._finsh._cur - q.map[q._finsh._map_index]);
+		for (iterator i = _start, j = q._start; i < _finsh; i++) {
+			*(i._cur) = *(j._cur);
+		}
+	}
 
+	//template<class T,class Alloc>
+	//deque<T, Alloc>::~deque() {
+	//	for(int i=0;)
+	//}
 }
 
 #endif // !_DEQUE_IMPL_H_
