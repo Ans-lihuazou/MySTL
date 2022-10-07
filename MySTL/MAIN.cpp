@@ -12,7 +12,10 @@ after_and_befor aab;
 //#include "ListTest.h"	//test is ok
 //#include "DequeTest.h"//已实现功能可正确运行，但会发生重复链接问题未解决，只能将DequeTest.h代码
 //移动到MAIN中运行
+#include "StackTest.h"
 
+//  /FORCE:MULTIPLE:不管是否重复定义
 signed main() {
-	//MySTL::DequeTest::testAllCases();
+	MySTL::StackTest::testAllCases();
+	//testAllCases();
 }

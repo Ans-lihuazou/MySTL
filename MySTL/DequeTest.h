@@ -1,8 +1,9 @@
 #ifndef _DEQUETEST_H_
 #define _DEQUETEST_H_
 
-#include "TestUtil.h"
+
 #include <deque>
+#include "TestUtil.h"
 #include "Deque.h"
 //#include "Allocator.h"
 

@@ -3,11 +3,9 @@
 #ifndef _ALGORITHM_H_
 #define _ALGORITHM_H_
 
-
-
 #include "Iterator.h"
 #include "TypeTraits.h"
-#include "Allocator.h"
+//#include "Allocator.h"
 #include <cassert>
 
 namespace MySTL {
