@@ -13,6 +13,7 @@ namespace MySTL {
 	public:
 		typedef typename Sequence::value_type value_type;
 		typedef typename Sequence::reference reference;
+		typedef typename Sequence::const_reference const_reference;
 		typedef typename Sequence::size_type size_type;
 		typedef typename Sequence sequence_type;
 
@@ -22,6 +23,7 @@ namespace MySTL {
 		void push(const value_type& value) { s.push_back(value); }
 		void pop() { s.pop_back(); }
 		reference top() { return s.back(); }
+		const_reference top()const { return s.back(); }
 
 		size_type size() { return s.size(); };
 		bool empty() { return s.empty(); };
