@@ -28,6 +28,9 @@
     <Filter Include="头文件\Dqque">
       <UniqueIdentifier>{16cdcc4f-8479-4d0a-ac39-ac1f4177d8f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Stack">
+      <UniqueIdentifier>{bebf2e7e-3785-4dce-b889-7d45edc57d92}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithm.h">
@@ -83,6 +86,9 @@
     </ClInclude>
     <ClInclude Include="Deque.impl.h">
       <Filter>头文件\Dqque</Filter>
+    </ClInclude>
+    <ClInclude Include="stack.h">
+      <Filter>头文件\Stack</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
