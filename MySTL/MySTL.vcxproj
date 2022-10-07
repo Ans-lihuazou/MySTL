@@ -144,6 +144,7 @@
     <ClInclude Include="ListTest.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="ReverseIterator.h" />
+    <ClInclude Include="stack.h" />
     <ClInclude Include="TestUtil.h" />
     <ClInclude Include="TypeTraits.h" />
     <ClInclude Include="Utlity.h" />
