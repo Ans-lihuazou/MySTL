@@ -110,6 +110,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <StackReserveSize>104857600</StackReserveSize>
       <StackCommitSize>104857600</StackCommitSize>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,6 +129,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <StackReserveSize>104857600</StackReserveSize>
       <StackCommitSize>104857600</StackCommitSize>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -145,6 +147,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="ReverseIterator.h" />
     <ClInclude Include="stack.h" />
+    <ClInclude Include="StackTest.h" />
     <ClInclude Include="TestUtil.h" />
     <ClInclude Include="TypeTraits.h" />
     <ClInclude Include="Utlity.h" />

@@ -90,6 +90,9 @@
     <ClInclude Include="stack.h">
       <Filter>头文件\Stack</Filter>
     </ClInclude>
+    <ClInclude Include="StackTest.h">
+      <Filter>头文件\Test</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MAIN.cpp">
