@@ -57,7 +57,7 @@ namespace MySTL {
 				+ (it1._cur - it1._get_head(it1._map_index)) + (it2._get_tail(it2._map_index) - it2._cur) + 1;
 			return result;
 		}
-
+		
 		template<class T>
 		void swap(iterator_deque<T>& iter1, iterator_deque<T>& iter2) {
 			iter1.swap(iter2);
@@ -169,7 +169,7 @@ namespace MySTL {
 		auto temp = (deque<const T>*const)this;
 		return const_iterator(iter._map_index,const_cast<const value_type*>(iter._cur)
 		,temp);
-		
+
 	}
 
 	template<class T,class Alloc>
@@ -213,7 +213,7 @@ namespace MySTL {
 			*(i._cur) = *(j._cur);
 		}
 	}
-	
+		
 	template<class T, class Alloc>
 	deque<T, Alloc>::deque(deque&& q) {
 		map_size = q.map_size;
@@ -227,7 +227,7 @@ namespace MySTL {
 			*(i._cur) = *(j._cur);
 		}
 	}
-
+	
 	template<class T,class Alloc>
 	deque<T, Alloc>::~deque() {
 		for (iterator first = _start; first != _finsh; first++) {
@@ -265,7 +265,7 @@ namespace MySTL {
 		_finsh._cur = map[_finsh._map_index] + (q._finsh._cur - q.map[q._finsh._map_index]);
 		for (iterator i = _start, j = q._start; i < _finsh; i++, j++) {
 			*(i._cur) = *(j._cur);//¸³ÖµÖµ
-		}
+}
 		return *this;
 	}
 
