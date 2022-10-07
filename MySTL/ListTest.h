@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef _LISTTEST_H_
+#define _LISTTEST_H_
+
 #include "TestUtil.h"
 #include <list>
 #include "List.h"
@@ -322,3 +325,5 @@ namespace MySTL {
 		}
 	}
 }
+
+#endif // !_LISTTEST_H_

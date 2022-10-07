@@ -1,6 +1,4 @@
 #include <iostream>
-#include <cstdio>
-
 
 class after_and_befor {
 public:
@@ -12,11 +10,9 @@ after_and_befor aab;
 
 //#include "VectorTest.h"	//test is ok
 //#include "ListTest.h"	//test is ok
-
-void fun(const int& x) {
-	std::cout << x << std::endl;
-}
+//#include "DequeTest.h"//已实现功能可正确运行，但会发生重复链接问题未解决，只能将DequeTest.h代码
+//移动到MAIN中运行
 
 signed main() {
-	
+	//MySTL::DequeTest::testAllCases();
 }

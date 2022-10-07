@@ -1,4 +1,10 @@
 #pragma once
+
+#ifndef _ALGORITHM_H_
+#define _ALGORITHM_H_
+
+
+
 #include "Iterator.h"
 #include "TypeTraits.h"
 #include "Allocator.h"
@@ -162,3 +168,5 @@ namespace MySTL {
 	};
 
 }
+
+#endif // !_ALGORITHM_H_

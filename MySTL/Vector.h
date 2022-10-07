@@ -1,7 +1,7 @@
 #pragma once
 
-//#ifndef _VECTOR_
-//#define _VECTOR_
+#ifndef _VECTOR_H_
+#define _VECTOR_H_
 
 #include <algorithm>
 #include <type_traits>
@@ -470,6 +470,6 @@ namespace MySTL {
 		}
 	}
 };//end of namespace
-//#endif // !_VECTOR_
+#endif // !_VECTOR_
 
 

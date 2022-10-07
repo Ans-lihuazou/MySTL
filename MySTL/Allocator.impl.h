@@ -1,5 +1,10 @@
 #pragma once
 
+#ifndef _ALLOCATOR_IMPL_H_
+#define _ALLOCATOR_IMPL_H_
+
+
+
 namespace MySTL {
 	template<class T>
 	T* allocator<T>::allocate() {
@@ -44,3 +49,5 @@ namespace MySTL {
 		_Construct_::destory(first, last);
 	}
 }
+
+#endif // !_ALLOCATOR_IMPL_H_

@@ -1,5 +1,9 @@
 #pragma once
 
+#ifndef _CONSTRUCT_H_
+#define _CONSTRUCT_H_
+
+
 
 #include "TypeTraits.h"
 #include "Iterator.h"
@@ -40,3 +44,5 @@ namespace MySTL {
 		}
 	}
 }
+
+#endif // _CONSTRUCT_H_

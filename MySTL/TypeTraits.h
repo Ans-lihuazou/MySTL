@@ -1,5 +1,9 @@
 #pragma once
 
+#ifndef _TYPETRAITS_H_
+#define _TYPETRAITS_H_
+
+
 //#include <type_traits>
 
 namespace MySTL {
@@ -263,3 +267,5 @@ namespace MySTL {
 	}*/
 
 }
+
+#endif // !_TYPETRAITS_H_

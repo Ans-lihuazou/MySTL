@@ -1,5 +1,10 @@
 #pragma once
 
+#ifndef _UTLITY_H_
+#define _UTLITY_H_
+
+
+
 #include "TypeTraits.h"
 #include "Iterator.h"
 #include "Algorithm.h"
@@ -96,3 +101,5 @@ namespace MySTL {
 		_uninitialized_fill_aux(first, last, v, POD_type());
 	}
 }
+
+#endif // !_UTLITY_H_

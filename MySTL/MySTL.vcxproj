@@ -151,8 +151,8 @@
     <ClInclude Include="VectorTest.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DequeTest.h" />
     <ClCompile Include="MAIN.cpp" />
-    <ClCompile Include="VectorTest.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

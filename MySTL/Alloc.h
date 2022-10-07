@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef _ALLOC_H_
+#define _ALLOC_H_
+
 #include <cstdlib>
 #include <iostream>
 #include <new>
@@ -165,3 +168,4 @@ namespace MySTL {
 	}
 }
 
+#endif // !_ALLOC_H

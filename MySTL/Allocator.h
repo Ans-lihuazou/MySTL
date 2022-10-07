@@ -1,5 +1,10 @@
 #pragma once
 
+#ifndef _ALLOCATOR_H_
+#define _ALLOCATOR_H_
+
+
+
 #include <cstddef>
 #include "Construct.h"
 #include "Alloc.h"
@@ -35,3 +40,5 @@ namespace MySTL {
 }
 
 #include "Allocator.impl.h"
+
+#endif // !_ALLOCATOR_H

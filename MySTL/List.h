@@ -87,12 +87,12 @@ namespace MySTL{
 			bool operator!=(const iterator_type& rhs) {
 				return !(this->operator==(rhs));
 			}
-			//template<class T>
-			//friend bool operator ==(const iterator_list<T>& lhs, const iterator_list<T>& rhs);
-			//template<class T>
-			//friend bool operator !=(const iterator_list<T>& lhs, const iterator_list<T>& rhs);
+			/*template<class T>
+			friend bool operator ==(const iterator_list<T>& lhs, const iterator_list<T>& rhs);
+			template<class T>
+			friend bool operator !=(const iterator_list<T>& lhs, const iterator_list<T>& rhs);*/
 			//迭代器指向的数据
-			link_type node;
+			link_type node;//public
 		};//end of iterator_list
 
 		template<class T>

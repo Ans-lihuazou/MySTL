@@ -1,5 +1,9 @@
 #pragma once
 
+#ifndef _TESTUTIL_H_
+#define _TESTUTIL_H_
+
+
 
 #include <iterator>
 #include <iostream>
@@ -32,3 +36,5 @@ namespace MySTL {
 		}
 	}
 }
+
+#endif // !_TESTUTIL_H_

@@ -1,7 +1,7 @@
 #pragma once
 
-//#ifndef _VECTOR_TEST_H_
-//#define _VECTOR_TEST_H_
+#ifndef _VECTORTEST_H_
+#define _VECTORTEST_H_
 
 #include <vector>
 
@@ -287,4 +287,4 @@ namespace MySTL {
 	}
 }
 
-//#endif
+#endif

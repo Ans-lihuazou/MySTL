@@ -1,5 +1,10 @@
 #pragma once
 
+#ifndef _ITERATOR_H_
+#define _ITERATOR_H_
+
+
+
 #include <cstddef>
 
 namespace MySTL {
@@ -108,3 +113,5 @@ namespace MySTL {
 	}
 
 }
+
+#endif // !_ITERATOR_H_

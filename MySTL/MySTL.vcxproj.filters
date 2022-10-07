@@ -86,11 +86,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="VectorTest.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="MAIN.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DequeTest.h">
+      <Filter>头文件\Test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

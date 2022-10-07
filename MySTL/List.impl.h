@@ -1,5 +1,9 @@
 #pragma once
 
+#ifndef _LIST_IMPL_H_
+#define _LIST_IMPL_H_
+
+
 namespace MySTL {
 	//私有功能函数
 	template<class T>
@@ -600,3 +604,5 @@ namespace MySTL {
 	}
 
 }//end of namespace
+
+#endif // !_LIST_IMPL_H

@@ -1,5 +1,10 @@
 #pragma once
 
+#ifndef _REVERSEITERATOR_H_
+#define _REVERSEITERATOR_H_
+
+
+
 #include "Iterator.h"
 //·´Ïòµü´úÆ÷
 //rbegin,rend
@@ -167,4 +172,4 @@ namespace MySTL {
 }
 
 
-
+#endif // !_REVERSEITERATOR_H_
