@@ -14,11 +14,11 @@ after_and_befor aab;
 //移动到MAIN中运行
 //#include "StackTest.h" //test is ok
 //#include "QueueTest.h" //test is ok
+//#include "Priority_QueueTest.h" //test is ok
 
 //  /FORCE:MULTIPLE:不管是否重复定义
 
 
-
 signed main() {
-
+	//MySTL::Priority_QueueTest::testAllCases();
 }
