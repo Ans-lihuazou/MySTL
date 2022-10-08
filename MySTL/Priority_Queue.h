@@ -21,6 +21,9 @@ namespace MySTL {
 		priority_queue(InputIterator first, InputIterator last,
 			const Sequence& t = Sequence(), const Compare c = Compare()):s(t),cmp(c) {
 			s.insert(s.end(), first, last);
+			/*std::cout << std::endl;
+			for (auto& i : s) std::cout << i << " ";
+			std::cout << std::endl;*/
 			Heap_Alogrithm::make_heap(s.begin(), s.end(), cmp);
 		}
 
