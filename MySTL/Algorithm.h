@@ -10,50 +10,60 @@
 
 namespace MySTL {
 	
+	//swap
+	template<class T>
+	void swap(T& a, T& b) {
+		T temp = a;
+		a = b;
+		b = temp;
+	}
+
+
 	namespace Heap_Alogrithm {
 		//push
-		template<class InputIterator,class Compare>
-		void push_heap(InputIterator first, InputIterator last,
-			Compare cmp=MySTL::less<typename MySTL::IteratorTraits<InputIterator>::value_type>) {
-			_push_heap_aux(first, last - 1, cmp);
-		}
-
 		template<class InputIterator, class Compare>
-		void _push_heap_aux(InputIterator first, InputIterator last, Compare cmp) {
+		void _push_heap_aux(InputIterator first, InputIterator last,InputIterator head, Compare cmp) {
 			//(parent+1)*2 = right_child->parent = right_child/2-1
 				//(child+1)/2 -1 = parent  -> (child-1)/2
 			if (first == last) return;//size = 1
-			int parentIndex = (last - first - 1) / 2;
-			for (; parentIndex >= 0 && last != first;) {
-				InputIterator parent = first + parentIndex;
+			int parentIndex = (last - head - 1) / 2;
+			for (; parentIndex >= 0 && last != head;) {
+				InputIterator parent = head + parentIndex;
 				if (cmp(*parent, *last)) {
-					MySTL::swap(*parent, *inset);
+					MySTL::swap(*parent, *last);
 				}
 				last = parent;
-				parentIndex = (last - first - 1) / 2;
+				parentIndex = (last - head - 1) / 2;
 			}
 		}
 
-		//pop
 		template<class InputIterator,class Compare>
-		void pop_heap(InputIterator first, InputIterator last,
-			Compare cmp = MySTL::less<typename MySTL::IteratorTraits<InputIterator>::value_type>) {
-			MySTL::swap(*(last - 1), *first);
-			_pop_heap_aux(first, last - 2, cmp);
+		void push_heap(InputIterator first, InputIterator last,
+			Compare cmp=MySTL::less<typename MySTL::IteratorTraits<InputIterator>::value_type>) {
+			_push_heap_aux(first, last - 1, first, cmp);
 		}
 
-		template<class InputIterator,class Compare>
-		void _pop_heap_aux(InputIterator first, InputIterator last, Compare cmp) {
+		
+
+		//pop
+
+		template<class InputIterator, class Compare>
+		void _pop_heap_aux(InputIterator first, InputIterator last,InputIterator head, Compare cmp) {
 			if (first == last) return; //size=1;
-			int len = last - first;
-			int parent_index = 0;
-			int child_index = 2;
+			int len = last - head;
+			int parent_index = first-head;
+			int child_index = parent_index * 2 + 2;
 			while (child_index <= len) {
-				if (cmp( * (first + child_index) , *(first + child_index - 1))) {
+				if (cmp(*(head + child_index), *(head + child_index - 1))) {
 					child_index--;
 				}
-				if (!cmp( * (first + parent_index) , *(first + child_index))) return;
-				MySTL::swap(*(first + parent_index), *(first + child_index));
+				if (cmp(*(head + parent_index), *(head + child_index))) {
+					MySTL::swap(*(head + parent_index), *(head + child_index));
+				}
+				else {
+					return;
+				}
+				
 				parent_index = child_index;
 				child_index = parent_index * 2 + 2;
 			}
@@ -65,16 +75,33 @@ namespace MySTL {
 			}
 		}
 
+		template<class InputIterator,class Compare>
+		void pop_heap(InputIterator first, InputIterator last,
+			Compare cmp = MySTL::less<typename MySTL::IteratorTraits<InputIterator>::value_type>) {
+			MySTL::swap(*(last - 1), *first);
+			if (last - first == 1) return;
+			_pop_heap_aux(first, last - 2, first, cmp);
+		}
+
+
+
 		//make_heap
 		template<class InputIterator,class Compare>
 		void make_heap(InputIterator first, InputIterator last,
 			Compare cmp = MySTL::less<typename MySTL::IteratorTraits<InputIterator>::value_type>) {
 			int len = last - first;
 			len = (len-1) / 2;
+			/*auto print = [=]() {
+				for (InputIterator iter = first; iter != last; iter++)
+					std::cout << *iter << " ";
+				std::cout << std::endl;
+			};*/
 			while (len) {
-				_pop_heap_aux(first, first + len, cmp);
+				//print();
+				_pop_heap_aux(first + len,last-1,first , cmp);
 				len--;
 			}
+			_pop_heap_aux(first, last - 1, first, cmp);
 		}
 
 
