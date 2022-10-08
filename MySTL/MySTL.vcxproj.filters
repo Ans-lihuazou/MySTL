@@ -34,6 +34,9 @@
     <Filter Include="头文件\Queue">
       <UniqueIdentifier>{b4e684ea-667d-4167-a306-37f7db1991b1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Priority_Queue">
+      <UniqueIdentifier>{a95e90b6-64b5-4951-90df-bba616dcf7cb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithm.h">
@@ -101,6 +104,9 @@
     </ClInclude>
     <ClInclude Include="QueueTest.h">
       <Filter>头文件\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="Priority_Queue.h">
+      <Filter>头文件\Priority_Queue</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

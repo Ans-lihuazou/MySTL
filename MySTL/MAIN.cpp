@@ -3,7 +3,7 @@
 class after_and_befor {
 public:
 	after_and_befor() { std::cout << "**********start test**********\n"; }
-	~after_and_befor() { std::cout << "**********no error**********\n"; }
+	~after_and_befor() { std::cout << "\n**********no error**********\n"; }
 };
 
 after_and_befor aab;
@@ -16,7 +16,9 @@ after_and_befor aab;
 //#include "QueueTest.h" //test is ok
 
 //  /FORCE:MULTIPLE:不管是否重复定义
+
+
+
 signed main() {
-	//MySTL::QueueTest::testAllCases();
-	//testAllCases();
+
 }
