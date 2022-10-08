@@ -10,6 +10,77 @@
 
 namespace MySTL {
 	
+	namespace Heap_Alogrithm {
+		//push
+		template<class InputIterator,class Compare>
+		void push_heap(InputIterator first, InputIterator last,
+			Compare cmp=MySTL::less<typename MySTL::IteratorTraits<InputIterator>::value_type>) {
+			_push_heap_aux(first, last - 1, cmp);
+		}
+
+		template<class InputIterator, class Compare>
+		void _push_heap_aux(InputIterator first, InputIterator last, Compare cmp) {
+			//(parent+1)*2 = right_child->parent = right_child/2-1
+				//(child+1)/2 -1 = parent  -> (child-1)/2
+			if (first == last) return;//size = 1
+			int parentIndex = (last - first - 1) / 2;
+			for (; parentIndex >= 0 && last != first;) {
+				InputIterator parent = first + parentIndex;
+				if (cmp(*parent, *last)) {
+					MySTL::swap(*parent, *inset);
+				}
+				last = parent;
+				parentIndex = (last - first - 1) / 2;
+			}
+		}
+
+		//pop
+		template<class InputIterator,class Compare>
+		void pop_heap(InputIterator first, InputIterator last,
+			Compare cmp = MySTL::less<typename MySTL::IteratorTraits<InputIterator>::value_type>) {
+			MySTL::swap(*(last - 1), *first);
+			_pop_heap_aux(first, last - 2, cmp);
+		}
+
+		template<class InputIterator,class Compare>
+		void _pop_heap_aux(InputIterator first, InputIterator last, Compare cmp) {
+			if (first == last) return; //size=1;
+			int len = last - first;
+			int parent_index = 0;
+			int child_index = 2;
+			while (child_index <= len) {
+				if (cmp( * (first + child_index) , *(first + child_index - 1))) {
+					child_index--;
+				}
+				if (!cmp( * (first + parent_index) , *(first + child_index))) return;
+				MySTL::swap(*(first + parent_index), *(first + child_index));
+				parent_index = child_index;
+				child_index = parent_index * 2 + 2;
+			}
+			if (child_index == len + 1) {//left child
+				child_index--;
+				if (cmp(*(first + parent_index), *(first + child_index))) {
+					MySTL::swap(*(first + parent_index), *(first + child_index));
+				}
+			}
+		}
+
+		//make_heap
+		template<class InputIterator,class Compare>
+		void make_heap(InputIterator first, InputIterator last,
+			Compare cmp = MySTL::less<typename MySTL::IteratorTraits<InputIterator>::value_type>) {
+			int len = last - first;
+			len = (len-1) / 2;
+			while (len) {
+				_pop_heap_aux(first, first + len, cmp);
+				len--;
+			}
+		}
+
+
+	}//end headp_algorithm
+
+
 	//deque_buffer_size
 	size_t __deque_buffer_size(size_t n, size_t type_size) {
 		if (n != 0) return n;
