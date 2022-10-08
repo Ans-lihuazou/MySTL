@@ -64,7 +64,7 @@ namespace MySTL {
 
 		//Element access(ȡֵ)
 		reference operator[](const size_type n) { assert(n < size());  return *(_start + n); }
-		const_reference operator[](const size_type n)const { assert(n > size()); return *(cbegin() + n); }
+		const_reference operator[](const size_type n)const { assert(n < size()); return *(cbegin() + n); }
 		reference front() { return *_start; }
 		reference back() { return *(_finsh - 1); }
 		pointer data() { return _start; }
@@ -311,7 +311,7 @@ namespace MySTL {
 
 	template<class T, class Alloc>
 	vector<T, Alloc>& vector<T, Alloc>::operator=(const vector<T, Alloc>& v) {
-		if (this != &v) _allocate_and_copy(v.begin(), v.end());
+		if (this != &v) _allocate_and_copy(v._start, v._finsh);
 		return *this;
 	};
 
