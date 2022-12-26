@@ -2,11 +2,12 @@
 #define _EB_TREE_H_
 
 #include "Iterator.h"
-#include <map>
+#include "Allocator.h"
+#include "Algorithm.h"
 
 namespace MySTL {
 
-	namespace MyEBTree {
+	namespace MyRBTree {
 
 		typedef typename bool color_type;
 		const color_type red = false;
@@ -28,6 +29,18 @@ namespace MySTL {
 			explicit rb_tree_node(node_ptr cParent) :parent(cParent), left(nullptr), right(nullptr), color(red) {};
 			rb_tree_node(const node& cNode) :parent(cNode.parent), left(cNode.left),
 				right(cNode.right), color(cNode.color), value(cNode.value) {};
+
+			bool operator==(const node& rhs) {
+
+				if (parent == rhs.parent && left == rhs.left && right == rhs.right &&
+					color == rhs.color && value == rhs.value) {
+					return true;
+				}
+
+				return false;
+			}
+			bool operator!=(const node& rhs) { return !(*this).operator==(rhs); }
+			
 		};
 
 		template<class T>
@@ -36,7 +49,6 @@ namespace MySTL {
 
 			typedef typename rb_tree_node::node_ptr node_ptr;
 			typedef typename rb_tree_node::node node;
-
 
 		public:
 
@@ -125,17 +137,51 @@ namespace MySTL {
 				return result;
 			}
 
+			bool operator == (const iterator& iter) { return iter->rb_node == rb_node; }
+			bool operator !=(const iterator& iter) { return iter->rb_node != rb_node; }
 
 		protected:
 
 			node rb_node;
-			//中序遍历的后继节点
-			void decrement() {};
-			
 		};
 
 	}//end of namespace MyRBTree
 
+	template<class T, class Alloc = allocator<T>, class Compare = MySTL::less<T>>
+	class rb_tree {
+	private:
+		typedef typename MyRBTree::rb_tree_node::node_ptr node_ptr;
+		typedef typename MyRBTree::rb_tree_node::node node;
+
+	public:
+		typedef	typename T				value_type;
+		typedef typename T*				pointer;
+		typedef typename const T*		const_pointer;
+		typedef typename T&				reference;
+		typedef typename const T&		const_reference;
+		typedef typename size_t			size_type;
+		typedef typename ptrdiff_t		difference_type;
+		
+		typedef typename MyRBTree::rb_tree_iterator<T> iterator;
+		typedef typename MyRBTree::rb_tree_iterator<const T> const_iterator;
+
+		rb_tree(const Compare& c = Compare());
+		explicit rb_tree(const node& rhs, const Compare& c = Compare());
+		template<class InputIterator>
+		rb_tree(InputIterator first, InputIterator last, const Compare& c = Compare());
+		rb_tree(const rb_tree& rhs);
+		rb_tree(rb_tree&&);
+
+
+	private:
+
+		iterator end;
+		Compare cmp;
+	};
+
+
+
 }//end of namespace MySTL
 
+#include "RBTree.imp.h"
 #endif // !_RB_TREE_H_
