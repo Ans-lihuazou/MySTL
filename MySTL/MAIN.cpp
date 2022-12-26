@@ -17,8 +17,9 @@ after_and_befor aab;
 
 //  /FORCE:MULTIPLE:不管是否重复定义
 
-
+#include "VectorTest.h"
 
 signed main() {
 
+	
 }

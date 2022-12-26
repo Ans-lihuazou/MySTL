@@ -1,4 +1,4 @@
-#pragma once
+ 
 
 #ifndef _VECTORTEST_H_
 #define _VECTORTEST_H_

@@ -1,5 +1,5 @@
 
-#pragma once
+ 
 #ifndef _DEQUE_IMPL_H_
 #define _DEQUE_IMPL_H_
 

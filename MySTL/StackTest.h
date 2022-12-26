@@ -1,4 +1,4 @@
-#pragma once
+ 
 #ifndef _STACKTEST_H_
 #define _STACKTEST_H_
 

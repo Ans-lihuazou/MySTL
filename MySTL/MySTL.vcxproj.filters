@@ -25,9 +25,6 @@
     <Filter Include="头文件\Allocator">
       <UniqueIdentifier>{944aab1c-268b-407d-98ff-4b620c9e5c24}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\Dqque">
-      <UniqueIdentifier>{16cdcc4f-8479-4d0a-ac39-ac1f4177d8f9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\Stack">
       <UniqueIdentifier>{bebf2e7e-3785-4dce-b889-7d45edc57d92}</UniqueIdentifier>
     </Filter>
@@ -36,6 +33,12 @@
     </Filter>
     <Filter Include="头文件\Priority_Queue">
       <UniqueIdentifier>{a95e90b6-64b5-4951-90df-bba616dcf7cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\RBTREE">
+      <UniqueIdentifier>{d5ff2ce6-a7a3-4b20-9906-a48bdf163869}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Deque">
+      <UniqueIdentifier>{16cdcc4f-8479-4d0a-ac39-ac1f4177d8f9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -88,10 +91,10 @@
       <Filter>头文件\Test</Filter>
     </ClInclude>
     <ClInclude Include="Deque.h">
-      <Filter>头文件\Dqque</Filter>
+      <Filter>头文件\Deque</Filter>
     </ClInclude>
     <ClInclude Include="Deque.impl.h">
-      <Filter>头文件\Dqque</Filter>
+      <Filter>头文件\Deque</Filter>
     </ClInclude>
     <ClInclude Include="stack.h">
       <Filter>头文件\Stack</Filter>
@@ -107,6 +110,12 @@
     </ClInclude>
     <ClInclude Include="Priority_Queue.h">
       <Filter>头文件\Priority_Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="RBTree.h">
+      <Filter>头文件\RBTREE</Filter>
+    </ClInclude>
+    <ClInclude Include="RBTree.imp.h">
+      <Filter>头文件\RBTREE</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-#pragma once
+ 
 
 #ifndef _UTLITY_H_
 #define _UTLITY_H_
@@ -12,13 +12,6 @@
 #include <string.h>
 
 namespace MySTL {
-	//swap
-	template<class T>
-	void swap(T& a, T& b) {
-		T temp = a;
-		a = b;
-		b = temp;
-	}
 
 	//uninitialized_fill_n
 	template<class ForwardIterator, class Size, class T>

@@ -147,6 +147,8 @@
     <ClInclude Include="Priority_Queue.h" />
     <ClInclude Include="queue.h" />
     <ClInclude Include="QueueTest.h" />
+    <ClInclude Include="RBTree.h" />
+    <ClInclude Include="RBTree.imp.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="ReverseIterator.h" />
     <ClInclude Include="stack.h" />

@@ -1,4 +1,4 @@
-#pragma once
+ 
 
 #ifndef _REVERSEITERATOR_H_
 #define _REVERSEITERATOR_H_

@@ -1,4 +1,4 @@
-#pragma once
+ 
 
 #ifndef _ALGORITHM_H_
 #define _ALGORITHM_H_
@@ -9,6 +9,14 @@
 #include <cassert>
 
 namespace MySTL {
+
+	//swap
+	template<class T>
+	void swap(T& a, T& b) {
+		T temp = a;
+		a = b;
+		b = temp;
+	}
 	
 	namespace Heap_Alogrithm {
 		//push
@@ -27,7 +35,7 @@ namespace MySTL {
 			for (; parentIndex >= 0 && last != first;) {
 				InputIterator parent = first + parentIndex;
 				if (cmp(*parent, *last)) {
-					MySTL::swap(*parent, *inset);
+					MySTL::swap(*parent, *last);
 				}
 				last = parent;
 				parentIndex = (last - first - 1) / 2;

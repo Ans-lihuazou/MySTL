@@ -1,6 +1,4 @@
-#pragma once
-
-#ifndef _DEQUE_H_
+ #ifndef _DEQUE_H_
 #define _DEQUE_H_
 
 #include "Iterator.h"
