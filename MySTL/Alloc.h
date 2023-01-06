@@ -1,6 +1,4 @@
- 
-
-#ifndef _ALLOC_H_
+ #ifndef _ALLOC_H_
 #define _ALLOC_H_
 
 #include <cstdlib>
@@ -161,6 +159,7 @@ namespace MySTL {
 				end_free = 0;
 				throw std::bad_alloc();
 			}
+			//…Í«Îø’º‰≥…π¶
 			end_free = start_free + get_malloc_byte;
 			heap_size += get_malloc_byte;
 			return chunk_alloc(sz, nobjs);

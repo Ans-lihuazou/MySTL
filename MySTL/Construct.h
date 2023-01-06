@@ -1,9 +1,5 @@
- 
-
 #ifndef _CONSTRUCT_H_
 #define _CONSTRUCT_H_
-
-
 
 #include "TypeTraits.h"
 #include "Iterator.h"
@@ -11,6 +7,8 @@
 
 namespace MySTL {
 	namespace _Construct_ {
+
+		/*
 		template<class T>
 		inline void construct(T* p, const T& v) {
 			new(p)T(v);
@@ -42,6 +40,7 @@ namespace MySTL {
 				is_POD_type POD_type;
 			_destory(first, last, POD_type());
 		}
+		*/
 	}
 }
 
