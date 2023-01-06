@@ -144,3 +144,37 @@ const_reference MySTRING::string::operator[](size_type pos) const {
 
 	return *(_start + pos);
 }
+
+reference MySTRING::string::at(size_type pos) {
+
+	return operator[](pos);
+}
+
+const_reference MySTRING::string::at(size_type pos) const {
+
+	return operator[](pos);
+}
+
+reference MySTRING::string::back() {
+
+	if (empty()) {
+		throw("error: string::back()\n");
+	}
+	return *(_finsh - 1);
+}
+
+const_reference MySTRING::string::back() const{
+	
+	if (_start == _finsh ) {
+		throw("error: string::back()\n");
+	}
+	return *(_finsh - 1);
+}
+
+reference MySTRING::string::front() {
+
+	if (_start == _finsh) {
+		throw("error: string::back()\n");
+	}
+	return *_start;
+}

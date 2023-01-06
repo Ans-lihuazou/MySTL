@@ -54,10 +54,27 @@ namespace MySTRING {
 		bool empty();
 		void shrink_to_fit();//»•µÙ‘§¡Ùø’º‰
 
+		//Element access:
 		reference operator[](size_type pos);
 		const_reference operator[](size_type pos) const;
 
+		reference at(size_type pos);
+		const_reference at(size_type pos) const;
 
+		reference back();
+		const_reference back()const;
+
+		reference front();
+		const_reference front()const;
+
+		//Modifiers:
+		string& operator+(const string& str);
+		string& operator+(const char* c);
+		string& operator+(char c);
+
+		string& operator+=(const string& str);
+		string& operator+=(const char* c);
+		string& operator+=(char c);
 
 	private:
 		iterator _start;
