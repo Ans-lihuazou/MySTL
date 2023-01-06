@@ -17,8 +17,8 @@ namespace MySTL {
 	class vector {
 	public:
 		typedef T							value_type;
-		typedef T* pointer;
-		typedef T* iterator;
+		typedef T*		pointer;
+		typedef T*		iterator;
 		typedef const T* const_iterator;
 		typedef T& reference;
 		typedef const T& const_reference;
@@ -181,7 +181,8 @@ namespace MySTL {
 		if (n <= dis) {//¹»ÓÃ
 			iterator temp = _finsh - 1;
 			for (; temp-position >=0 ; temp--) {
-				_Construct_::construct(temp + n, *temp);
+				//_Construct_::construct(temp + n, *temp);
+				allocator<T>::construct(temp + n, *temp);
 			}
 			MySTL::uninitialized_fill_n(position, n, value);
 			_finsh = _finsh + n;

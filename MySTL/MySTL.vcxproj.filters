@@ -40,12 +40,15 @@
     <Filter Include="头文件\Deque">
       <UniqueIdentifier>{16cdcc4f-8479-4d0a-ac39-ac1f4177d8f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Trie_Tree">
+      <UniqueIdentifier>{ef78d991-32c0-46d1-ae66-4771f72fc647}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\String">
+      <UniqueIdentifier>{e9005557-7675-4b9f-b8a9-317326fcea5a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Algorithm.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Construct.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Iterator.h">
@@ -117,6 +120,15 @@
     <ClInclude Include="RBTree.imp.h">
       <Filter>头文件\RBTREE</Filter>
     </ClInclude>
+    <ClInclude Include="Trie_Tree.h">
+      <Filter>头文件\Trie_Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>头文件\String</Filter>
+    </ClInclude>
+    <ClInclude Include="Construct.h">
+      <Filter>头文件\Allocator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MAIN.cpp">
@@ -124,6 +136,9 @@
     </ClCompile>
     <ClCompile Include="DequeTest.h">
       <Filter>头文件\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Trie_Tree.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

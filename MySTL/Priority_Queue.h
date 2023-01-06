@@ -1,4 +1,3 @@
- 
 #ifndef _PRIORITY_QUEUE_H_
 #define _PRIORITY_QUEUE_H_
 
@@ -61,3 +60,4 @@ namespace MySTL {
 }
 
 #endif // !_PRIORITY_QUEUE_H_
+

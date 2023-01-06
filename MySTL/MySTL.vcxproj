@@ -153,7 +153,9 @@
     <ClInclude Include="ReverseIterator.h" />
     <ClInclude Include="stack.h" />
     <ClInclude Include="StackTest.h" />
+    <ClInclude Include="String.h" />
     <ClInclude Include="TestUtil.h" />
+    <ClInclude Include="Trie_Tree.h" />
     <ClInclude Include="TypeTraits.h" />
     <ClInclude Include="Utlity.h" />
     <ClInclude Include="Vector.h" />
@@ -162,6 +164,7 @@
   <ItemGroup>
     <ClCompile Include="DequeTest.h" />
     <ClCompile Include="MAIN.cpp" />
+    <ClCompile Include="Trie_Tree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

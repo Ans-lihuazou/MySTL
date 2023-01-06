@@ -79,7 +79,7 @@ namespace MySTL {
 
 				//为end()节点
 				if (rb_node.color == red && rb_node.parent->parent == rb_node) {
-					throw("error::operator++");
+					throw("error: rb_iterator operator++");
 				}
 
 				//当节点具有右子树，他的后继节点为右子树的最左节点
@@ -126,7 +126,12 @@ namespace MySTL {
 						rb_node = nParent;
 						nParent = nParent.parent;
 					}
-					rb_node = nParent;
+					if (rb_node.left != nParent) {
+						
+					}
+					else {
+						throw("error: rb_iterator operator--");
+					}
 				}
 				return *this;
 			}

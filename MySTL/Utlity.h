@@ -1,9 +1,5 @@
- 
-
 #ifndef _UTLITY_H_
 #define _UTLITY_H_
-
-
 
 #include "TypeTraits.h"
 #include "Iterator.h"
@@ -26,7 +22,9 @@ namespace MySTL {
 	(ForwardIterator first, Size sz, const T& v, _false_type) {
 		//std::cout << "_fasle_type_\n";
 		ForwardIterator cur = first;
-		for (; sz; sz--, cur++)_Construct_::construct(&*cur, v);
+		for (; sz; sz--, cur++) {
+			allocator<typename IteratorTraits<ForwardIterator>::value_type>::construct(&*cur, v);
+		}
 		return cur;
 	}
 
@@ -56,8 +54,10 @@ namespace MySTL {
 	template<class InputIterator, class ForwardIterator>
 	ForwardIterator _uninitialized_copy_aux(InputIterator first, InputIterator last, ForwardIterator result, _false_type) {
 		ForwardIterator cur = result;
+
 		for (; first != last; first++, cur++) {
-			_Construct_::construct(&*cur, *first);
+			//_Construct_::construct(&*cur, *first);
+			allocator<typename IteratorTraits<ForwardIterator>::value_type>::construct(&*cur, *first);
 		}
 		return cur;
 	}
@@ -84,7 +84,10 @@ namespace MySTL {
 	template<class ForwardIterator, class T>
 	void _uninitialized_fill_aux
 	(ForwardIterator first, ForwardIterator last, const T& v, _false_type) {
-		for (; first < last; first++) _Construct_::construct(&*first, v);
+		for (; first < last; first++) {
+			//_Construct_::construct(&*first, v);
+			allocator<typename IteratorTraits<ForwardIterator>::value_type>::construct(&*first, *v);
+		}
 	}
 
 	template<class ForwardIterator, class T>
