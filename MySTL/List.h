@@ -40,57 +40,63 @@ namespace MySTL{
 		public:
 			typedef iterator_list<T>	iterator_type;
 			typedef size_t				size_type;
-			typedef  ListNode<T>		list_node;
-			typedef  ListNode<T>*		link_type;
-
-
+			typedef ListNode<T>			list_node;
+			typedef ListNode<T>*		link_type;
 
 			//构造
-			iterator_list() {};
+			iterator_list():node(0) {};
 			iterator_list(link_type n) :node(n) {};
 			iterator_list(const iterator_list& iter) :node(iter.node) {};
 
 			iterator_type& operator++() {
+
 				node = node->next;
 				return *this;
 			}
 
 			iterator_type operator++(int) {
+
 				iterator_type temp = *this;
 				++(*this);
 				return temp;
 			}
 
 			iterator_type& operator--() {
+
 				node = node->prev;
 				return *this;
 			}
 
 			iterator_type operator--(int) {
+
 				iterator_type temp = *this;
 				--(*this);
 				return temp;
 			}
 
 			T& operator*() {
+
 				return node->data;
 			}
 
 			T* operator->() {
+
 				return &(this->operator*());
 			}
 
 			bool operator==( const iterator_type& rhs) {
+
 				return node == rhs.node;
 			}
 
 			bool operator!=(const iterator_type& rhs) {
+
 				return !(this->operator==(rhs));
 			}
-			/*template<class T>
+			template<class T>
 			friend bool operator ==(const iterator_list<T>& lhs, const iterator_list<T>& rhs);
 			template<class T>
-			friend bool operator !=(const iterator_list<T>& lhs, const iterator_list<T>& rhs);*/
+			friend bool operator !=(const iterator_list<T>& lhs, const iterator_list<T>& rhs);
 			//迭代器指向的数据
 			link_type node;//public
 		};//end of iterator_list

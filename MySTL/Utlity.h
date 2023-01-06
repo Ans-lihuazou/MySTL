@@ -38,6 +38,7 @@ namespace MySTL {
 	template<class ForwardIterator, class Size, class T>
 	ForwardIterator
 		uninitialized_fill_n(ForwardIterator first, Size sz, const T& value) {
+		//将[first,first+sz)赋值为value
 		typedef typename _type_traits<T>::is_POD_type POD_type;
 		return _uninitialized_fill_n_aux(first, sz, value, POD_type());
 	}
@@ -69,8 +70,8 @@ namespace MySTL {
 
 	template<class InputIterator, class ForwardIterator>
 	ForwardIterator uninitialized_copy(InputIterator first, InputIterator last, ForwardIterator result) {
-		typedef typename _type_traits< typename IteratorTraits<InputIterator>::value_type 
-		>::is_POD_type POD_type;
+		typedef typename _type_traits< typename IteratorTraits<InputIterator>::value_type >::is_POD_type POD_type;
+		//将[first, last)的值拷入[result,result+(last-first))中
 		return _uninitialized_copy_aux(first, last, result, POD_type());
 	}
 
