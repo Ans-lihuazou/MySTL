@@ -8,7 +8,7 @@ public:
 
 after_and_befor aab;
 
-//#include "VectorTest.h"	//test is ok
+#include "VectorTest.h"	//test is ok
 //#include "ListTest.h"		//test is ok
 //#include "DequeTest.h"	//test is ok
 //#include "StackTest.h"	//test is ok
@@ -16,6 +16,6 @@ after_and_befor aab;
 
 
 int main() {
-	//MySTL::DequeTest::testAllCases();
+	MySTL::VectorTest::testAllCases();
 	return 0;
 }

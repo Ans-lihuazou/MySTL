@@ -159,6 +159,7 @@
     <ClInclude Include="TypeTraits.h" />
     <ClInclude Include="Utlity.h" />
     <ClInclude Include="Vector.h" />
+    <ClInclude Include="Vector.imp.h" />
     <ClInclude Include="VectorTest.h" />
   </ItemGroup>
   <ItemGroup>
