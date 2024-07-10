@@ -3,8 +3,8 @@
 
 #include <stddef.h>
 
-#include "Allocator.h"
-#include "Utlity.h"
+#include "../Alloc/Allocator.h"
+#include "../Tools/Utlity.h"
 
 namespace MySTRING {
 
@@ -28,14 +28,14 @@ namespace MySTRING {
 		//construct
 		string();
 		string(const string& str);
-		string(const string& str, size_t pos, size_t len);
-		string(const char* s);
-		string(const char* s, size_t n);
-		string(size_t n, char c);
-		template <class InputIterator>  
-		string(InputIterator first, InputIterator last);
+		//string(const string& str, size_t pos, size_t len);
+		//string(const char* s);
+		//string(const char* s, size_t n);
+		//string(size_t n, char c);
+		//template <class InputIterator>  
+		//string(InputIterator first, InputIterator last);
 
-		virtual ~string();
+		//~string() {};
 
 		//Iterators
 		iterator begin();
@@ -86,6 +86,7 @@ namespace MySTRING {
 		
 
 	};
+
 }
 
 #endif // !_STRING_H_2023_1_6_

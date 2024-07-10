@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="头文件\Test">
-      <UniqueIdentifier>{36786f5e-fef6-4d5d-b219-01b3a5850a56}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\List">
       <UniqueIdentifier>{18ce1d57-ea3b-4db8-8c46-4c8df489bfb9}</UniqueIdentifier>
     </Filter>
@@ -27,9 +24,6 @@
     </Filter>
     <Filter Include="头文件\Queue">
       <UniqueIdentifier>{b4e684ea-667d-4167-a306-37f7db1991b1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="头文件\Priority_Queue">
-      <UniqueIdentifier>{a95e90b6-64b5-4951-90df-bba616dcf7cb}</UniqueIdentifier>
     </Filter>
     <Filter Include="头文件\RBTREE">
       <UniqueIdentifier>{d5ff2ce6-a7a3-4b20-9906-a48bdf163869}</UniqueIdentifier>
@@ -46,102 +40,128 @@
     <Filter Include="头文件\Vector">
       <UniqueIdentifier>{54f9fe78-0ade-4d40-a6ec-a81fd4cea67c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\TestCase">
+      <UniqueIdentifier>{35bc1ec5-1cd3-45b2-8eaa-1885a7816090}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Iterator">
+      <UniqueIdentifier>{a350b7d7-4ef3-491d-82ab-dc69f8b1a745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Tools">
+      <UniqueIdentifier>{3eeeeadb-6150-4c30-90c5-91b5fea67aba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Algorithm.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Iterator.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ReverseIterator.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="TypeTraits.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Utlity.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Vector.h">
-      <Filter>头文件\Vector</Filter>
-    </ClInclude>
-    <ClInclude Include="TestUtil.h">
-      <Filter>头文件\Test</Filter>
-    </ClInclude>
-    <ClInclude Include="VectorTest.h">
-      <Filter>头文件\Test</Filter>
-    </ClInclude>
-    <ClInclude Include="List.h">
-      <Filter>头文件\List</Filter>
-    </ClInclude>
-    <ClInclude Include="Alloc.h">
+    <ClInclude Include="Alloc\Allocator.h">
       <Filter>头文件\Allocator</Filter>
     </ClInclude>
-    <ClInclude Include="Allocator.h">
+    <ClInclude Include="Alloc\Allocator.impl.h">
       <Filter>头文件\Allocator</Filter>
     </ClInclude>
-    <ClInclude Include="Allocator.impl.h">
+    <ClInclude Include="Alloc\Construct.h">
       <Filter>头文件\Allocator</Filter>
     </ClInclude>
-    <ClInclude Include="List.impl.h">
-      <Filter>头文件\List</Filter>
+    <ClInclude Include="Alloc\Alloc.h">
+      <Filter>头文件\Allocator</Filter>
     </ClInclude>
-    <ClInclude Include="ListTest.h">
-      <Filter>头文件\Test</Filter>
-    </ClInclude>
-    <ClInclude Include="Deque.h">
+    <ClInclude Include="Deque\Deque.impl.h">
       <Filter>头文件\Deque</Filter>
     </ClInclude>
-    <ClInclude Include="Deque.impl.h">
+    <ClInclude Include="Deque\Deque.h">
       <Filter>头文件\Deque</Filter>
     </ClInclude>
-    <ClInclude Include="stack.h">
-      <Filter>头文件\Stack</Filter>
+    <ClInclude Include="List\List.h">
+      <Filter>头文件\List</Filter>
     </ClInclude>
-    <ClInclude Include="StackTest.h">
-      <Filter>头文件\Test</Filter>
+    <ClInclude Include="List\List.impl.h">
+      <Filter>头文件\List</Filter>
     </ClInclude>
-    <ClInclude Include="queue.h">
+    <ClInclude Include="Queue\Priority_Queue.h">
       <Filter>头文件\Queue</Filter>
     </ClInclude>
-    <ClInclude Include="QueueTest.h">
-      <Filter>头文件\Test</Filter>
+    <ClInclude Include="Queue\Queue.h">
+      <Filter>头文件\Queue</Filter>
     </ClInclude>
-    <ClInclude Include="Priority_Queue.h">
-      <Filter>头文件\Priority_Queue</Filter>
-    </ClInclude>
-    <ClInclude Include="RBTree.h">
+    <ClInclude Include="RBTree\RBTree.imp.h">
       <Filter>头文件\RBTREE</Filter>
     </ClInclude>
-    <ClInclude Include="RBTree.imp.h">
+    <ClInclude Include="RBTree\RBTree.h">
       <Filter>头文件\RBTREE</Filter>
     </ClInclude>
-    <ClInclude Include="Trie_Tree.h">
+    <ClInclude Include="Stack\stack.h">
+      <Filter>头文件\Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="TestCase\ListTest.h">
+      <Filter>头文件\TestCase</Filter>
+    </ClInclude>
+    <ClInclude Include="TestCase\QueueTest.h">
+      <Filter>头文件\TestCase</Filter>
+    </ClInclude>
+    <ClInclude Include="TestCase\StackTest.h">
+      <Filter>头文件\TestCase</Filter>
+    </ClInclude>
+    <ClInclude Include="TestCase\TestUtil.h">
+      <Filter>头文件\TestCase</Filter>
+    </ClInclude>
+    <ClInclude Include="TestCase\VectorTest.h">
+      <Filter>头文件\TestCase</Filter>
+    </ClInclude>
+    <ClInclude Include="TestCase\DequeTest.h">
+      <Filter>头文件\TestCase</Filter>
+    </ClInclude>
+    <ClInclude Include="TrieTree\Trie_Tree.h">
       <Filter>头文件\Trie_Tree</Filter>
     </ClInclude>
-    <ClInclude Include="String.h">
-      <Filter>头文件\String</Filter>
-    </ClInclude>
-    <ClInclude Include="Construct.h">
-      <Filter>头文件\Allocator</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector.imp.h">
+    <ClInclude Include="Vector\Vector.imp.h">
       <Filter>头文件\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector\Vector.h">
+      <Filter>头文件\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Iterator\Iterator.h">
+      <Filter>头文件\Iterator</Filter>
+    </ClInclude>
+    <ClInclude Include="Iterator\ReverseIterator.h">
+      <Filter>头文件\Iterator</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Algorithm.h">
+      <Filter>头文件\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\TypeTraits.h">
+      <Filter>头文件\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Tools\Utlity.h">
+      <Filter>头文件\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="TestCase\TestCase.h">
+      <Filter>头文件\TestCase</Filter>
+    </ClInclude>
+    <ClInclude Include="String\String.h">
+      <Filter>头文件\String</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MAIN.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="DequeTest.h">
-      <Filter>头文件\Test</Filter>
+    <ClCompile Include="TrieTree\Trie_Tree.cpp">
+      <Filter>头文件\Trie_Tree</Filter>
     </ClCompile>
-    <ClCompile Include="Trie_Tree.cpp">
+    <ClCompile Include="String\String.cpp">
+      <Filter>头文件\String</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakelists.txt">
       <Filter>源文件</Filter>
-    </ClCompile>
+    </Text>
+    <Text Include="String\CMakeLists.txt">
+      <Filter>头文件\String</Filter>
+    </Text>
+    <Text Include="TrieTree\CMakeLists.txt">
+      <Filter>头文件\Trie_Tree</Filter>
+    </Text>
   </ItemGroup>
 </Project>

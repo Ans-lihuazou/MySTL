@@ -1,8 +1,9 @@
 #ifndef _PRIORITY_QUEUE_H_
 #define _PRIORITY_QUEUE_H_
 
-#include "Vector.h"
-#include "Allocator.h"
+#include "../Vector/Vector.h"
+#include "../Alloc/Allocator.h"
+#include "../Tools/Algorithm.h"
 
 namespace MySTL {
 	template<class T,class Sequence = MySTL::vector<T>,class Compare=MySTL::less<T>>

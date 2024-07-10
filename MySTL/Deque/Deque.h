@@ -1,11 +1,11 @@
  #ifndef _DEQUE_H_
 #define _DEQUE_H_
 
-#include "Iterator.h"
-#include "Algorithm.h"
-#include "Allocator.h"
-#include "ReverseIterator.h"
-#include "Utlity.h"
+#include "../Iterator/Iterator.h"
+#include "../Tools/Algorithm.h"
+#include "../Alloc/Allocator.h"
+#include "../Iterator/ReverseIterator.h"
+#include "../Tools//Utlity.h"
 
 
 namespace MySTL {

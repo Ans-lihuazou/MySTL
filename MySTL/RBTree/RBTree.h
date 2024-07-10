@@ -1,9 +1,9 @@
 #ifndef _RB_TREE_H_
 #define _EB_TREE_H_
 
-#include "Iterator.h"
-#include "Allocator.h"
-#include "Algorithm.h"
+#include "../Iterator/Iterator.h"
+#include "../Alloc/Allocator.h"
+#include "../Tools/Algorithm.h"
 
 namespace MySTL {
 

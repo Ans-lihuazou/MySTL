@@ -3,7 +3,7 @@
 #define _QUEUETEST_H_
 #include "TestUtil.h"
 #include <queue>
-#include "queue.h"
+#include "../Queue/Queue.h"
 #include <cassert>
 #include <string>
 

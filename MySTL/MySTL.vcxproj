@@ -133,39 +133,46 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Algorithm.h" />
-    <ClInclude Include="Alloc.h" />
-    <ClInclude Include="Allocator.h" />
-    <ClInclude Include="Allocator.impl.h" />
-    <ClInclude Include="Construct.h" />
-    <ClInclude Include="Deque.h" />
-    <ClInclude Include="Deque.impl.h" />
-    <ClInclude Include="Iterator.h" />
-    <ClInclude Include="List.h" />
-    <ClInclude Include="List.impl.h" />
-    <ClInclude Include="ListTest.h" />
-    <ClInclude Include="Priority_Queue.h" />
-    <ClInclude Include="queue.h" />
-    <ClInclude Include="QueueTest.h" />
-    <ClInclude Include="RBTree.h" />
-    <ClInclude Include="RBTree.imp.h" />
+    <ClInclude Include="Alloc\Alloc.h" />
+    <ClInclude Include="Alloc\Allocator.h" />
+    <ClInclude Include="Alloc\Allocator.impl.h" />
+    <ClInclude Include="Alloc\Construct.h" />
+    <ClInclude Include="Deque\Deque.h" />
+    <ClInclude Include="Deque\Deque.impl.h" />
+    <ClInclude Include="Iterator\Iterator.h" />
+    <ClInclude Include="Iterator\ReverseIterator.h" />
+    <ClInclude Include="List\List.h" />
+    <ClInclude Include="List\List.impl.h" />
+    <ClInclude Include="Queue\Priority_Queue.h" />
+    <ClInclude Include="Queue\Queue.h" />
+    <ClInclude Include="RBTree\RBTree.h" />
+    <ClInclude Include="RBTree\RBTree.imp.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="ReverseIterator.h" />
-    <ClInclude Include="stack.h" />
-    <ClInclude Include="StackTest.h" />
-    <ClInclude Include="String.h" />
-    <ClInclude Include="TestUtil.h" />
-    <ClInclude Include="Trie_Tree.h" />
-    <ClInclude Include="TypeTraits.h" />
-    <ClInclude Include="Utlity.h" />
-    <ClInclude Include="Vector.h" />
-    <ClInclude Include="Vector.imp.h" />
-    <ClInclude Include="VectorTest.h" />
+    <ClInclude Include="Stack\stack.h" />
+    <ClInclude Include="String\String.h" />
+    <ClInclude Include="TestCase\DequeTest.h" />
+    <ClInclude Include="TestCase\ListTest.h" />
+    <ClInclude Include="TestCase\QueueTest.h" />
+    <ClInclude Include="TestCase\StackTest.h" />
+    <ClInclude Include="TestCase\TestCase.h" />
+    <ClInclude Include="TestCase\TestUtil.h" />
+    <ClInclude Include="TestCase\VectorTest.h" />
+    <ClInclude Include="Tools\Algorithm.h" />
+    <ClInclude Include="Tools\TypeTraits.h" />
+    <ClInclude Include="Tools\Utlity.h" />
+    <ClInclude Include="TrieTree\Trie_Tree.h" />
+    <ClInclude Include="Vector\Vector.h" />
+    <ClInclude Include="Vector\Vector.imp.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DequeTest.h" />
     <ClCompile Include="MAIN.cpp" />
-    <ClCompile Include="Trie_Tree.cpp" />
+    <ClCompile Include="String\String.cpp" />
+    <ClCompile Include="TrieTree\Trie_Tree.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakelists.txt" />
+    <Text Include="String\CMakeLists.txt" />
+    <Text Include="TrieTree\CMakeLists.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

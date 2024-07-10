@@ -15,8 +15,9 @@ string::string():_start(0),_finsh(0),_end_of_storage(0) {
 
 string::string(const string& str) {
 
-	
 }
+
+
 
 void string::deallocate() {
 
@@ -30,8 +31,8 @@ void MySTRING::string::allocate(size_type sz, value_type c){
 	_end_of_storage = _finsh;
 }
 
-iterator MySTRING::string::begin(){
-
+iterator MySTRING::string::begin() {
+	
 	return _start;
 }
 

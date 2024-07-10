@@ -1,8 +1,8 @@
 #ifndef _CONSTRUCT_H_
 #define _CONSTRUCT_H_
 
-#include "TypeTraits.h"
-#include "Iterator.h"
+#include "../Tools/TypeTraits.h"
+#include "../Iterator/Iterator.h"
 #include <cstdlib>
 
 namespace MySTL {

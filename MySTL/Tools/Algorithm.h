@@ -3,8 +3,8 @@
 #ifndef _ALGORITHM_H_
 #define _ALGORITHM_H_
 
-#include "Iterator.h"
-#include "TypeTraits.h"
+#include "../Iterator/Iterator.h"
+#include "../Tools/TypeTraits.h"
 //#include "Allocator.h"
 #include <cassert>
 

@@ -5,9 +5,8 @@
 
 
 #include <stack>
-#include "Stack.h"
+#include "../Stack/stack.h"
 #include "TestUtil.h"
-
 #include <cassert>
 #include <string>
 

@@ -2,7 +2,7 @@
 #ifndef _QUEUE_H_
 #define _QUEUE_H_
 
-#include "List.h"
+#include "../List/List.h"
 
 namespace MySTL {
 	template<class T,class Sequence = MySTL::list<T>>

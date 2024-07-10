@@ -1,11 +1,9 @@
- 
-
 #ifndef _VECTORTEST_H_
 #define _VECTORTEST_H_
 
 #include <vector>
 
-#include "Vector.h"
+#include "../Vector/Vector.h"
 #include "TestUtil.h"
 
 

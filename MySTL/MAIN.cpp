@@ -9,11 +9,12 @@ public:
 after_and_befor aab;
 
 //#include "VectorTest.h"	//test is ok
-#include "ListTest.h"		//test is ok
+//#include "ListTest.h"		//test is ok
 //#include "DequeTest.h"	//test is ok
 //#include "StackTest.h"	//test is ok
 //#include "QueueTest.h"	//test is ok
 
+#include "TestCase/TestCase.h"
 
 int main() {
 	MySTL::ListTest::testAllCases();

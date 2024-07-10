@@ -4,7 +4,7 @@
 
 #include <deque>
 #include "TestUtil.h"
-#include "Deque.h"
+#include "../Deque/Deque.h"
 //#include "Allocator.h"
 
 #include <cassert>

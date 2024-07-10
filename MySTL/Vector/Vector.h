@@ -6,10 +6,10 @@
 #include <algorithm>
 #include <type_traits>
 
-#include "Iterator.h"
-#include "Allocator.h"
-#include "ReverseIterator.h"
-#include "Utlity.h"
+#include "../Iterator/Iterator.h"
+#include "../Alloc/Allocator.h"
+#include "../Iterator/ReverseIterator.h"
+#include "../Tools/Utlity.h"
 
 
 namespace MySTL {

@@ -2,11 +2,11 @@
 #ifndef _LIST_H_
 #define _LIST_H_
 
-#include "Iterator.h"
-#include "Allocator.h"
-#include "ReverseIterator.h"
-#include "Algorithm.h"
-#include "Utlity.h"
+#include "../Iterator/Iterator.h"
+#include "../Alloc/Allocator.h"
+#include "../Iterator/ReverseIterator.h"
+#include "../Tools/Algorithm.h"
+#include "../Tools/Utlity.h"
 #include <cstddef>
 #include <cassert>
 #include <type_traits>

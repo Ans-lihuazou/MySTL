@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(MySTL)
+
+add_subdirectory(String)
+add_subdirectory(Trie_Tree)
+
+set(SOURCE_FILE ../main.cpp ${STRING_SOURCE} ${TRIE_TREE_SOURCE})
+
+add_executable(MySTL )
