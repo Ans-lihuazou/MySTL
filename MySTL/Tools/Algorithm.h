@@ -17,6 +17,24 @@ namespace MySTL {
 		a = b;
 		b = temp;
 	}
+
+		//less
+	template<class T>
+	struct less {
+
+		bool operator()(const T& x, const T& y) {
+			return x < y;
+		}
+	};
+
+	//greater
+	template<class T>
+	struct greater {
+
+		bool operator()(const T& x, const T& y) {
+			return x > y;
+		}
+	};
 	
 	namespace Heap_Alogrithm {
 		//push
@@ -96,8 +114,8 @@ namespace MySTL {
 		return 1;
 	}
 
-	//distance ¼ÆËãµü´úÆ÷µÄ¾àÀë
-	//Ò»²½Ò»²½¼ÆËã:InputIterator,OutputIterator,ForwardIterator,BidirectionalIterator
+	//distance ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½
+	//Ò»ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:InputIterator,OutputIterator,ForwardIterator,BidirectionalIterator
 	template<class InputIterator>
 	inline  typename InputIterator::difference_type
 		_distance(InputIterator first, InputIterator last, input_iterator_tag) {
@@ -106,7 +124,7 @@ namespace MySTL {
 		return n;
 	}
 
-	//Ö±½Ó¼ÆËã:RandomAccessIterator
+	//Ö±ï¿½Ó¼ï¿½ï¿½ï¿½:RandomAccessIterator
 	template<class RandomAccessIterator>
 	inline  typename RandomAccessIterator::difference_type
 		_distance(RandomAccessIterator first, RandomAccessIterator last, random_access_iterator_tag) {
@@ -124,16 +142,16 @@ namespace MySTL {
 
 	//advance
 	template<class InputIterator, class Distance>
-	void _advance(InputIterator& it, Distance n, input_iterator_tag) {//µ¥ÏòÒ»²½Ò»²½
+	void _advance(InputIterator& it, Distance n, input_iterator_tag) {//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ò»ï¿½ï¿½
 		assert(n >= 0);
 		while (n--) ++it;
 	}
-	template<class BidirectionIterator, class Distance>//Ç°ºóÒ»²½Ò»²½
+	template<class BidirectionIterator, class Distance>//Ç°ï¿½ï¿½Ò»ï¿½ï¿½Ò»ï¿½ï¿½
 	void _advance(BidirectionIterator& it, Distance n, bidirectional_iterator_tag) {
 		if (n < 0) while (n++) --it;
 		else while (n--) ++it;
 	}
-	template<class RandomIterator, class Distance>//ËæÒâ
+	template<class RandomIterator, class Distance>//ï¿½ï¿½ï¿½ï¿½
 	void _advance(RandomIterator& it, Distance n, random_access_iterator_tag) {
 		it += n;
 	}
@@ -225,24 +243,6 @@ namespace MySTL {
 		memcpy(result, first, sizeof(*first) * dist);
 		return result + dist;
 	}
-
-	//less
-	template<class T>
-	struct less {
-
-		bool operator()(const T& x, const T& y) {
-			return x < y;
-		}
-	};
-
-	//greater
-	template<class T>
-	struct greater {
-
-		bool operator()(const T& x, const T& y) {
-			return x > y;
-		}
-	};
 
 }
 
